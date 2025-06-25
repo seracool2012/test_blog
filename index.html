@@ -972,4 +972,66 @@
             </div>
             
             <div class="footer-column">
-                <h3>Program
+                <h3>Program</h3>
+                <ul class="footer-links">
+                    <li>Luni-Vineri: 9:00-18:00</li>
+                    <li>Sâmbătă: 10:00-14:00</li>
+                    <li>Duminică: Închis</li>
+                    <li>Programări la telefon sau online</li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="copyright">
+            <p>&copy; 2023 Irina Terapie Viscerală. Toate drepturile rezervate.</p>
+        </div>
+    </footer>
+    
+    <script>
+        // Meniu mobil
+        document.querySelector('.menu-toggle').addEventListener('click', function() {
+            document.querySelector('.nav-links').classList.toggle('active');
+        });
+        
+        // Smooth scroll pentru link-uri
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+                
+                // Închide meniul mobil după click
+                if (window.innerWidth <= 768) {
+                    document.querySelector('.nav-links').classList.remove('active');
+                }
+            });
+        });
+        
+        // Testimoniale slider
+        let currentTestimonial = 0;
+        const testimonials = document.querySelectorAll('.testimonial');
+        
+        function showTestimonial(index) {
+            testimonials.forEach((testimonial, i) => {
+                testimonial.style.display = i === index ? 'block' : 'none';
+            });
+        }
+        
+        function nextTestimonial() {
+            currentTestimonial = (currentTestimonial + 1) % testimonials.length;
+            showTestimonial(currentTestimonial);
+        }
+        
+        // Porneste slider-ul
+        showTestimonial(0);
+        setInterval(nextTestimonial, 8000);
+        
+        // Animatie la încărcare
+        window.addEventListener('load', function() {
+            document.querySelector('header').classList.add('loaded');
+        });
+    </script>
+</body>
+</html>
