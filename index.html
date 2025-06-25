@@ -910,7 +910,7 @@
                 </div>
                 
                 <div class="contact-form">
-                    <form>
+                    <form action="process_appointment.php" method="POST">
                         <div class="form-group">
                             <label for="name">Nume complet</label>
                             <input type="text" id="name" required>
@@ -1038,5 +1038,47 @@ function smoothScrollTo(targetY, duration) {
 }
 // ...existing code...
     </script>
+    <script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const urlParams = new URLSearchParams(window.location.search);
+        const status = urlParams.get('status');
+        const contactForm = document.querySelector('.contact-form'); // Asigură-te că selectezi corect elementul părinte al formularului
+
+        if (status) {
+            const messageDiv = document.createElement('div');
+            messageDiv.style.padding = '1rem';
+            messageDiv.style.marginBottom = '1.5rem';
+            messageDiv.style.borderRadius = '5px';
+            messageDiv.style.textAlign = 'center';
+
+            if (status === 'success') {
+                messageDiv.style.backgroundColor = '#d4edda';
+                messageDiv.style.color = '#155724';
+                messageDiv.textContent = 'Programarea a fost trimisă cu succes! Veți fi contactat(ă) în curând.';
+            } else if (status === 'error') {
+                messageDiv.style.backgroundColor = '#f8d7da';
+                messageDiv.style.color = '#721c24';
+                messageDiv.textContent = 'A apărut o eroare la trimiterea programării. Vă rugăm să încercați din nou.';
+            }
+            // Inserează mesajul înainte de formular
+            if (contactForm) {
+                contactForm.prepend(messageDiv);
+            }
+
+            // Elimină parametrii din URL după afișare pentru o experiență mai curată
+            history.replaceState({}, document.title, window.location.pathname);
+        }
+
+        // Script pentru meniul mobil
+        const menuToggle = document.querySelector('.menu-toggle');
+        const navLinks = document.querySelector('.nav-links');
+
+        if (menuToggle && navLinks) {
+            menuToggle.addEventListener('click', () => {
+                navLinks.classList.toggle('active');
+            });
+        }
+    });
+</script>
 </body>
 </html>
