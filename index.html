@@ -3,178 +3,973 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Terapii Kineto - Specialiști în Recuperare prin Masaj</title>
+    <title>Terapie Viscerală | Irina Masaj</title>
     <style>
-        /* (Păstrează același CSS ca în exemplul anterior) */
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
+        
+        :root {
+            --primary: #6a4c93;
+            --secondary: #8a5a44;
+            --accent: #f8b400;
+            --dark: #2c2929;
+            --light: #f9f5f0;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+        
+        body {
+            background-color: var(--light);
+            color: var(--dark);
+            overflow-x: hidden;
+        }
+        
+        header {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: white;
+            padding: 3rem 2rem;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .logo {
+            font-size: 2.8rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            animation: fadeInDown 1s ease;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+        
+        .tagline {
+            font-size: 1.3rem;
+            max-width: 800px;
+            margin: 0 auto 2rem;
+            animation: fadeIn 2s ease;
+        }
+        
+        nav {
+            background-color: white;
+            box-shadow: 0 2px 15px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .nav-links {
+            display: flex;
+            list-style: none;
+        }
+        
+        .nav-links li {
+            margin-left: 2rem;
+            position: relative;
+        }
+        
+        .nav-links a {
+            text-decoration: none;
+            color: var(--dark);
+            font-weight: 600;
+            transition: all 0.3s;
+            padding: 0.5rem 0;
+            font-size: 1.1rem;
+        }
+        
+        .nav-links a:hover {
+            color: var(--primary);
+        }
+        
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 3px;
+            background-color: var(--accent);
+            transition: width 0.3s;
+        }
+        
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+        
+        .hero-btn {
+            display: inline-block;
+            background-color: var(--accent);
+            color: var(--dark);
+            padding: 0.8rem 2rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            margin-top: 1rem;
+            transition: all 0.3s;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+            animation: pulse 2s infinite;
+        }
+        
+        .hero-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(0,0,0,0.3);
+        }
+        
+        .menu-toggle {
+            display: none;
+            cursor: pointer;
+            font-size: 1.5rem;
+        }
+        
+        main {
+            max-width: 1200px;
+            margin: 3rem auto;
+            padding: 0 2rem;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin: 4rem 0;
+            position: relative;
+        }
+        
+        .section-title h2 {
+            font-size: 2.5rem;
+            color: var(--primary);
+            display: inline-block;
+            position: relative;
+        }
+        
+        .section-title h2::after {
+            content: '';
+            position: absolute;
+            bottom: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 4px;
+            background: linear-gradient(to right, var(--primary), var(--accent));
+            border-radius: 2px;
+        }
+        
+        .about-container {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            gap: 3rem;
+            margin: 3rem 0;
+        }
+        
+        .about-img {
+            flex: 1 1 400px;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+        }
+        
+        .about-img img {
+            width: 100%;
+            height: auto;
+            display: block;
+            transition: transform 0.5s;
+        }
+        
+        .about-img:hover img {
+            transform: scale(1.05);
+        }
+        
+        .about-text {
+            flex: 1 1 400px;
+        }
+        
+        .about-text h3 {
+            font-size: 2rem;
+            color: var(--primary);
+            margin-bottom: 1.5rem;
+        }
+        
+        .about-text p {
+            margin-bottom: 1.5rem;
+            line-height: 1.8;
+            font-size: 1.1rem;
+        }
+        
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin: 3rem 0;
+        }
+        
+        .benefit-card {
+            background: white;
+            border-radius: 10px;
+            padding: 2rem;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+            transition: transform 0.3s, box-shadow 0.3s;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .benefit-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.15);
+        }
+        
+        .benefit-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 5px;
+            height: 100%;
+            background: linear-gradient(to bottom, var(--primary), var(--accent));
+        }
+        
+        .benefit-card h3 {
+            color: var(--primary);
+            margin-bottom: 1rem;
+            font-size: 1.5rem;
+        }
+        
+        .benefit-card p {
+            color: #555;
+            line-height: 1.7;
+        }
+        
+        .benefit-icon {
+            font-size: 2.5rem;
+            color: var(--accent);
+            margin-bottom: 1rem;
+        }
+        
+        .testimonials-section {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            padding: 4rem 2rem;
+            margin: 4rem 0;
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .testimonials-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio="none"><path d="M0,0 L100,0 L100,100 Q50,80 0,100 Z" fill="rgba(255,255,255,0.1)"/></svg>');
+            background-size: cover;
+            opacity: 0.2;
+        }
+        
+        .testimonial-container {
+            max-width: 1000px;
+            margin: 0 auto;
+            position: relative;
+        }
+        
+        .testimonial {
+            background: rgba(255,255,255,0.1);
+            backdrop-filter: blur(5px);
+            padding: 2rem;
+            border-radius: 10px;
+            margin: 2rem 0;
+            position: relative;
+        }
+        
+        .testimonial::before {
+            content: '"';
+            position: absolute;
+            top: 10px;
+            left: 20px;
+            font-size: 5rem;
+            color: rgba(255,255,255,0.2);
+            font-family: Georgia, serif;
+        }
+        
+        .testimonial-text {
+            font-size: 1.2rem;
+            font-style: italic;
+            margin-bottom: 1.5rem;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .testimonial-author {
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+        }
+        
+        .testimonial-author img {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-right: 1rem;
+            border: 2px solid var(--accent);
+        }
+        
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin: 3rem 0;
+        }
+        
+        .gallery-item {
+            border-radius: 10px;
+            overflow: hidden;
+            position: relative;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            aspect-ratio: 1/1;
+        }
+        
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s;
+        }
+        
+        .gallery-item:hover img {
+            transform: scale(1.1);
+        }
+        
+        .gallery-caption {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);
+            color: white;
+            padding: 1rem;
+            transform: translateY(100%);
+            transition: transform 0.3s;
+        }
+        
+        .gallery-item:hover .gallery-caption {
+            transform: translateY(0);
+        }
+        
+        .advice-container {
+            background: white;
+            border-radius: 10px;
+            padding: 2rem;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+            margin: 3rem 0;
+        }
+        
+        .advice-item {
+            margin-bottom: 2rem;
+            padding-bottom: 2rem;
+            border-bottom: 1px dashed #ddd;
+        }
+        
+        .advice-item:last-child {
+            margin-bottom: 0;
+            padding-bottom: 0;
+            border-bottom: none;
+        }
+        
+        .advice-item h3 {
+            color: var(--primary);
+            margin-bottom: 1rem;
+            font-size: 1.5rem;
+        }
+        
+        .advice-item p {
+            line-height: 1.8;
+            margin-bottom: 1rem;
+        }
+        
+        .contact-section {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 3rem;
+            margin: 4rem 0;
+        }
+        
+        .contact-info {
+            flex: 1 1 400px;
+        }
+        
+        .contact-info h3 {
+            font-size: 2rem;
+            color: var(--primary);
+            margin-bottom: 1.5rem;
+        }
+        
+        .contact-detail {
+            display: flex;
+            align-items: center;
+            margin-bottom: 1.5rem;
+        }
+        
+        .contact-icon {
+            font-size: 1.5rem;
+            color: var(--accent);
+            margin-right: 1rem;
+            width: 40px;
+            height: 40px;
+            background: rgba(106, 76, 147, 0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .contact-text h4 {
+            font-size: 1.2rem;
+            margin-bottom: 0.3rem;
+        }
+        
+        .contact-text p {
+            color: #666;
+        }
+        
+        .contact-form {
+            flex: 1 1 400px;
+            background: white;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+        }
+        
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+            color: var(--dark);
+        }
+        
+        .form-group input,
+        .form-group textarea,
+        .form-group select {
+            width: 100%;
+            padding: 0.8rem 1rem;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 1rem;
+            transition: all 0.3s;
+        }
+        
+        .form-group input:focus,
+        .form-group textarea:focus,
+        .form-group select:focus {
+            border-color: var(--primary);
+            outline: none;
+            box-shadow: 0 0 0 3px rgba(106, 76, 147, 0.1);
+        }
+        
+        .form-group textarea {
+            min-height: 150px;
+            resize: vertical;
+        }
+        
+        .submit-btn {
+            background: var(--accent);
+            color: var(--dark);
+            border: none;
+            padding: 1rem 2rem;
+            border-radius: 50px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+            width: 100%;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+        
+        .submit-btn:hover {
+            background: #e6a800;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+        }
+        
+        footer {
+            background: var(--dark);
+            color: white;
+            padding: 4rem 2rem 2rem;
+            text-align: center;
+        }
+        
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            text-align: left;
+        }
+        
+        .footer-column h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1.5rem;
+            position: relative;
+            display: inline-block;
+        }
+        
+        .footer-column h3::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 50%;
+            height: 3px;
+            background: var(--accent);
+        }
+        
+        .footer-links {
+            list-style: none;
+        }
+        
+        .footer-links li {
+            margin-bottom: 0.8rem;
+        }
+        
+        .footer-links a {
+            color: #bbb;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        
+        .footer-links a:hover {
+            color: white;
+        }
+        
+        .social-links {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1.5rem;
+        }
+        
+        .social-links a {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background: rgba(255,255,255,0.1);
+            border-radius: 50%;
+            color: white;
+            transition: all 0.3s;
+        }
+        
+        .social-links a:hover {
+            background: var(--accent);
+            color: var(--dark);
+            transform: translateY(-3px);
+        }
+        
+        .copyright {
+            margin-top: 3rem;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            color: #bbb;
+        }
+        
+        /* Animations */
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+        
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-15px); }
+            100% { transform: translateY(0px); }
+        }
+        
+        .floating {
+            animation: float 3s ease-in-out infinite;
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .nav-container {
+                flex-direction: column;
+            }
+            
+            .nav-links {
+                flex-direction: column;
+                width: 100%;
+                max-height: 0;
+                overflow: hidden;
+                transition: max-height 0.3s ease;
+            }
+            
+            .nav-links.active {
+                max-height: 500px;
+                padding: 1rem 0;
+            }
+            
+            .nav-links li {
+                margin: 0.8rem 0;
+                text-align: center;
+                margin-left: 0;
+            }
+            
+            .menu-toggle {
+                display: block;
+                align-self: flex-end;
+                margin-top: -50px;
+            }
+            
+            .section-title h2 {
+                font-size: 2rem;
+            }
+            
+            .about-text, .contact-info, .contact-form {
+                flex: 1 1 100%;
+            }
+        }
     </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
-    <!-- (Păstrează același header și navigație ca în exemplul anterior) -->
+    <header>
+        <div class="logo">Terapie Viscerală</div>
+        <p class="tagline">Cu Irina - Specialist în Terapie Manuală Viscerală</p>
+        <a href="#contact" class="hero-btn">Programează o consultație</a>
+    </header>
+    
+    <nav>
+        <div class="nav-container">
+            <div class="menu-toggle">☰</div>
+            <ul class="nav-links">
+                <li><a href="#despre">Despre Terapie</a></li>
+                <li><a href="#beneficii">Beneficii</a></li>
+                <li><a href="#testimoniale">Păreri</a></li>
+                <li><a href="#galerie">Galerie</a></li>
+                <li><a href="#sfaturi">Sfaturi</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
     
     <main>
-        <!-- Secțiunea Servicii - acum cu mai multe detalii -->
-        <section id="servicii">
+        <section id="despre">
             <div class="section-title">
-                <h2>Terapiile noastre specializate</h2>
+                <h2>Despre Terapia Viscerală</h2>
             </div>
             
-            <div class="services-grid">
-                <!-- 1. Masaj Terapeutic Clasic -->
-                <div class="service-card floating">
-                    <img src="https://images.unsplash.com/photo-1544161515-4ab6ce6db874?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="Masaj terapeutic clasic">
-                    <div class="service-content">
-                        <h3 class="service-title">Masaj Terapeutic Clasic</h3>
-                        <p class="service-desc">Tehnici tradiționale pentru relaxare profundă și ameliorarea tensiunii musculare.</p>
-                        <div class="therapy-details" style="margin-top: 1rem; padding-top: 1rem; border-top: 1px dashed #ddd;">
-                            <p><strong>Beneficii:</strong> Reduce stresul, îmbunătățește circulația, eliberează tensiunea musculară</p>
-                            <p><strong>Durata:</strong> 60-90 minute</p>
-                            <p><strong>Citat Terapeut:</strong> "Fiecare atingere terapeutică este un pas către echilibrul corporal și mental."</p>
+            <div class="about-container">
+                <div class="about-img">
+                    <img src="https://images.unsplash.com/photo-1585435557343-3b092031a831?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="Terapie Viscerală">
+                </div>
+                <div class="about-text">
+                    <h3>Ce este terapia viscerală?</h3>
+                    <p>Terapia viscerală este o formă specializată de terapie manuală care se concentrează pe organele interne (viscerale) și pe relația lor cu structurile musculo-scheletale ale corpului.</p>
+                    <p>Ca terapeut cu peste 10 ani de experiență, aplic tehnici delicate pentru a identifica și corecta restricțiile de mișcare sau tensiunile din sistemul visceral, care pot fi sursa multor dureri și disconforturi.</p>
+                    <p>Terapia mea se adresează atât problemelor acute, cât și celor cronice, oferind o abordare holistică a sănătății.</p>
+                    <p><strong>"Organele noastre au propria lor mobilitate și motilitate, iar când acestea sunt perturbate, întregul corp suferă."</strong> - Irina, Terapeut Visceral</p>
+                </div>
+            </div>
+        </section>
+        
+        <section id="beneficii">
+            <div class="section-title">
+                <h2>Beneficiile Terapiei Viscerale</h2>
+            </div>
+            
+            <div class="benefits-grid">
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <i class="fas fa-heartbeat"></i>
+                    </div>
+                    <h3>Îmbunătățirea funcției digestive</h3>
+                    <p>Alină problemele de constipație, balonare, arsuri gastrice și sindromul intestinului iritabil prin normalizarea mobilității organelor digestive.</p>
+                </div>
+                
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <i class="fas fa-bone"></i>
+                    </div>
+                    <h3>Reducerea durerilor de spate</h3>
+                    <p>Multe dureri lombare sau dorsale au originea în tensiuni ale organelor interne care tracționează structurile musculo-scheletale.</p>
+                </div>
+                
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <i class="fas fa-lungs"></i>
+                    </div>
+                    <h3>Optimizarea funcției respiratorii</h3>
+                    <p>Eliberează restricțiile diafragmatice și improvează capacitatea pulmonară prin manipularea delicată a plămânilor și a structurilor adiacente.</p>
+                </div>
+                
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <i class="fas fa-female"></i>
+                    </div>
+                    <h3>Echilibrarea sistemului reproducător</h3>
+                    <p>Ajută la ameliorarea durerilor menstruale, a sindromului premenstrual și a altor disfuncții ale sistemului reproducător feminin.</p>
+                </div>
+                
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <i class="fas fa-brain"></i>
+                    </div>
+                    <h3>Reducerea stresului și anxietății</h3>
+                    <p>Organele digestive sunt strâns legate de sistemul nervos, iar terapia viscerală poate induce o stare profundă de relaxare și echilibru.</p>
+                </div>
+                
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <i class="fas fa-hands-helping"></i>
+                    </div>
+                    <h3>Recuperare post-chirurgicală</h3>
+                    <p>Ajută la prevenirea aderențelor și restabilirea mobilității normale după intervenții chirurgicale abdominale sau pelvine.</p>
+                </div>
+            </div>
+        </section>
+        
+        <section id="testimoniale" class="testimonials-section">
+            <div class="section-title">
+                <h2 style="color: white;">Părerile Clienților Noștri</h2>
+            </div>
+            
+            <div class="testimonial-container">
+                <div class="testimonial">
+                    <p class="testimonial-text">După ani de suferință cu sindromul intestinului iritabil și dureri lombare cronice, terapia viscerală cu Irina a fost revelația care a schimbat viața mea. După doar câteva ședințe, simptomele mele s-au ameliorat semnificativ.</p>
+                    <div class="testimonial-author">
+                        <img src="https://randomuser.me/api/portraits/women/65.jpg" alt="Ana M.">
+                        <div>
+                            <h4>Ana M.</h4>
+                            <p>Client din 2022</p>
                         </div>
-                        <a href="#contact" class="service-btn" style="margin-top: 1rem;">Programează-te</a>
                     </div>
                 </div>
                 
-                <!-- 2. Masaj Sportiv -->
-                <div class="service-card floating">
-                    <img src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="Masaj sportiv">
-                    <div class="service-content">
-                        <h3 class="service-title">Masaj Sportiv</h3>
-                        <p class="service-desc">Specializat pentru sportivi, pentru prevenirea leziunilor și recuperare rapidă.</p>
-                        <div class="therapy-details" style="margin-top: 1rem; padding-top: 1rem; border-top: 1px dashed #ddd;">
-                            <p><strong>Beneficii:</strong> Crește flexibilitatea, reduce riscul de accidentări, accelerează recuperarea</p>
-                            <p><strong>Durata:</strong> 45-75 minute</p>
-                            <p><strong>Citat Terapeut:</strong> "Corpul unui sportiv este ca un instrument de precizie - necesită întreținere constantă."</p>
+                <div class="testimonial">
+                    <p class="testimonial-text">Ca sportiv profesionist, am avut mereu probleme cu digestia sub stres. Terapia viscerală m-a ajutat nu doar să-mi îmbunătățesc funcția digestivă, dar și să-mi sporesc performanța prin respirație mai eficientă.</p>
+                    <div class="testimonial-author">
+                        <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Alexandru P.">
+                        <div>
+                            <h4>Alexandru P.</h4>
+                            <p>Atlet</p>
                         </div>
-                        <a href="#contact" class="service-btn" style="margin-top: 1rem;">Programează-te</a>
-                    </div>
-                </div>
-                
-                <!-- 3. Masaj Pentru Dureri de Spate -->
-                <div class="service-card floating">
-                    <img src="https://images.unsplash.com/photo-1545205597-3d9d02c29597?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="Masaj pentru dureri de spate">
-                    <div class="service-content">
-                        <h3 class="service-title">Terapie pentru Dureri de Spate</h3>
-                        <p class="service-desc">Soluții personalizate pentru problemele de coloană și postură.</p>
-                        <div class="therapy-details" style="margin-top: 1rem; padding-top: 1rem; border-top: 1px dashed #ddd;">
-                            <p><strong>Beneficii:</strong> Reduce durerile, corectează postura, previne afectări cronice</p>
-                            <p><strong>Durata:</strong> 60 minute (evaluare inclusă)</p>
-                            <p><strong>Citat Terapeut:</strong> "O coloană sănătoasă este baza unei vieți fără dureri."</p>
-                        </div>
-                        <a href="#contact" class="service-btn" style="margin-top: 1rem;">Programează-te</a>
-                    </div>
-                </div>
-                
-                <!-- 4. Masaj Lymphatic -->
-                <div class="service-card floating">
-                    <img src="https://images.unsplash.com/photo-1551650975-87deedd944c3?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="Drenaj lymphatic">
-                    <div class="service-content">
-                        <h3 class="service-title">Drenaj Lymphatic</h3>
-                        <p class="service-desc">Tehnici delicate pentru stimularea sistemului lymphatic.</p>
-                        <div class="therapy-details" style="margin-top: 1rem; padding-top: 1rem; border-top: 1px dashed #ddd;">
-                            <p><strong>Beneficii:</strong> Reduce edemele, detoxifiere, întărește sistemul imunitar</p>
-                            <p><strong>Durata:</strong> 60 minute</p>
-                            <p><strong>Citat Terapeut:</strong> "Drenajul lymphatic este comoara ascunsă a sănătății - invizibil, dar esențial."</p>
-                        </div>
-                        <a href="#contact" class="service-btn" style="margin-top: 1rem;">Programează-te</a>
-                    </div>
-                </div>
-                
-                <!-- 5. Masaj Pentru Femei Însărcinate -->
-                <div class="service-card floating">
-                    <img src="https://images.unsplash.com/photo-1530046339911-1d3d5d62e59b?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="Masaj pentru gravide">
-                    <div class="service-content">
-                        <h3 class="service-title">Masaj Prenatal</h3>
-                        <p class="service-desc">Terapie adaptată nevoilor specifice ale femeilor însărcinate.</p>
-                        <div class="therapy-details" style="margin-top: 1rem; padding-top: 1rem; border-top: 1px dashed #ddd;">
-                            <p><strong>Beneficii:</strong> Reduce durerile lombare, ameliorarea stresului, pregătire pentru naștere</p>
-                            <p><strong>Durata:</strong> 50 minute</p>
-                            <p><strong>Citat Terapeut:</strong> "Fiecare mamă merită un moment de relaxare profundă în această perioadă specială."</p>
-                        </div>
-                        <a href="#contact" class="service-btn" style="margin-top: 1rem;">Programează-te</a>
-                    </div>
-                </div>
-                
-                <!-- 6. Masaj Cu Piatră Caldă -->
-                <div class="service-card floating">
-                    <img src="https://images.unsplash.com/photo-1544168212-513b0d0bfb43?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="Masaj cu piatră caldă">
-                    <div class="service-content">
-                        <h3 class="service-title">Masaj Cu Piatră Caldă</h3>
-                        <p class="service-desc">Combinație între căldura pietrelor vulcanice și tehnici de masaj.</p>
-                        <div class="therapy-details" style="margin-top: 1rem; padding-top: 1rem; border-top: 1px dashed #ddd;">
-                            <p><strong>Beneficii:</strong> Relaxare profundă, ameliorarea durerilor musculare, detoxifiere</p>
-                            <p><strong>Durata:</strong> 90 minute</p>
-                            <p><strong>Citat Terapeut:</strong> "Căldura pietrelor vulcanice pătrunde adânc în țesuturi, eliberând tensiunile ascunse."</p>
-                        </div>
-                        <a href="#contact" class="service-btn" style="margin-top: 1rem;">Programează-te</a>
                     </div>
                 </div>
             </div>
         </section>
-
-        <!-- Secțiune Galerie Foto -->
+        
         <section id="galerie">
             <div class="section-title">
-                <h2>Galerie Terapii</h2>
+                <h2>Galerie Foto</h2>
             </div>
             
-            <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); gap: 1rem; margin: 2rem 0;">
-                <div style="overflow: hidden; border-radius: 8px; height: 250px;">
-                    <img src="https://images.unsplash.com/photo-1544161515-4ab6ce6db874?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="Terapie 1" style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.3s;" class="hover-zoom">
+            <div class="gallery-grid">
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1585435557343-3b092031a831?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="Terapie Viscerală 1">
+                    <div class="gallery-caption">Tehnici de evaluare viscerală</div>
                 </div>
-                <div style="overflow: hidden; border-radius: 8px; height: 250px;">
-                    <img src="https://images.unsplash.com/photo-1544168212-513b0d0bfb43?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="Terapie 2" style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.3s;" class="hover-zoom">
+                
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1571019614242-c5c5dee9f50b?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="Terapie Viscerală 2">
+                    <div class="gallery-caption">Lucrul pe zona abdominală</div>
                 </div>
-                <div style="overflow: hidden; border-radius: 8px; height: 250px;">
-                    <img src="https://images.unsplash.com/photo-1551650975-87deedd944c3?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="Terapie 3" style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.3s;" class="hover-zoom">
+                
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1544161515-4ab6ce6db874?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="Terapie Viscerală 3">
+                    <div class="gallery-caption">Tehnici de mobilitate viscerală</div>
                 </div>
-                <div style="overflow: hidden; border-radius: 8px; height: 250px;">
-                    <img src="https://images.unsplash.com/photo-1530046339911-1d3d5d62e59b?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="Terapie 4" style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.3s;" class="hover-zoom">
+                
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1551650975-87deedd944c3?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="Terapie Viscerală 4">
+                    <div class="gallery-caption">Echipament specializat</div>
                 </div>
             </div>
         </section>
-
-        <!-- (Păstrează secțiunile Despre Noi, Testimoniale și Contact ca în exemplul anterior) -->
+        
+        <section id="sfaturi">
+            <div class="section-title">
+                <h2>Sfaturi și Recomandări</h2>
+            </div>
+            
+            <div class="advice-container">
+                <div class="advice-item">
+                    <h3>Cum să te pregătești pentru o ședință de terapie viscerală</h3>
+                    <p>Pentru a obține rezultate optime, recomand următoarele:</p>
+                    <ul style="margin-left: 2rem; line-height: 1.8;">
+                        <li>Evitați mesele copioase cu 2-3 ore înainte de ședință</li>
+                        <li>Purtați haine comode, preferabil din materiale naturale</li>
+                        <li>Mențineți-vă hidratați în zilele premergătoare ședinței</li>
+                        <li>Notați-vă orice simptome sau disconforturi pe care doriți să le discutați</li>
+                    </ul>
+                </div>
+                
+                <div class="advice-item">
+                    <h3>Ce să așteptări să ai după terapie</h3>
+                    <p>După o ședință de terapie viscerală, corpul tău continuă să se regleze. Poți experimenta:</p>
+                    <ul style="margin-left: 2rem; line-height: 1.8;">
+                        <li>O senzație de ușurare și relaxare profundă</li>
+                        <li>Modificări în tranzitul intestinal (temporare)</li>
+                        <li>Dorindu-ți să bei mai multă apă</li>
+                        <li>O stare generală de bine care se intensifică în următoarele zile</li>
+                    </ul>
+                    <p><strong>"Ascultă mereu corpul tău - el îți va spune exact de ce are nevoie după terapie."</strong> - Irina</p>
+                </div>
+                
+                <div class="advice-item">
+                    <h3>Exerciții simple pentru acasă</h3>
+                    <p>Pentru a menține beneficiile terapiei între ședințe, recomand aceste exerciții simple:</p>
+                    <ol style="margin-left: 2rem; line-height: 1.8;">
+                        <li><strong>Respirația diafragmatică:</strong> 5 minute pe zi, cu mâna pe abdomen pentru a simți mișcarea</li>
+                        <li><strong>Rotații pelvine lente:</strong> În poziție culcată, cu genunchii îndoiți</li>
+                        <li><strong>Auto-masaj abdominal:</strong> Cu mișcări circulare lente, în sensul acelor de ceasornic</li>
+                    </ol>
+                </div>
+            </div>
+        </section>
+        
+        <section id="contact">
+            <div class="section-title">
+                <h2>Programează o ședință</h2>
+            </div>
+            
+            <div class="contact-section">
+                <div class="contact-info">
+                    <h3>Date de contact</h3>
+                    
+                    <div class="contact-detail">
+                        <div class="contact-icon">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <div class="contact-text">
+                            <h4>Adresă</h4>
+                            <p>Strada Terapiei Viscerale nr. 10, București</p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-detail">
+                        <div class="contact-icon">
+                            <i class="fas fa-phone-alt"></i>
+                        </div>
+                        <div class="contact-text">
+                            <h4>Telefon</h4>
+                            <p>+40 721 123 456</p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-detail">
+                        <div class="contact-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <div class="contact-text">
+                            <h4>Email</h4>
+                            <p>contact@irina-terapieviscerala.ro</p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-detail">
+                        <div class="contact-icon">
+                            <i class="fas fa-clock"></i>
+                        </div>
+                        <div class="contact-text">
+                            <h4>Program</h4>
+                            <p>Luni-Vineri: 9:00 - 18:00</p>
+                            <p>Sâmbătă: 10:00 - 14:00</p>
+                            <p>Duminică: Închis</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="contact-form">
+                    <form>
+                        <div class="form-group">
+                            <label for="name">Nume complet</label>
+                            <input type="text" id="name" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="phone">Telefon</label>
+                            <input type="tel" id="phone" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" id="email">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="service">Tip de terapie</label>
+                            <select id="service">
+                                <option value="consultatie">Consultație inițială</option>
+                                <option value="standard">Ședință standard</option>
+                                <option value="intensiv">Program intensiv</option>
+                                <option value="postchirurgical">Recuperare post-chirurgicală</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="message">Mesaj (opțional)</label>
+                            <textarea id="message"></textarea>
+                        </div>
+                        
+                        <button type="submit" class="submit-btn">Trimite cererea</button>
+                    </form>
+                </div>
+            </div>
+        </section>
     </main>
     
     <footer>
-        <!-- (Păstrează footer-ul din exemplul anterior) -->
-    </footer>
-
-    <script>
-        // Script pentru meniu mobil
-        document.querySelector('.menu-toggle').addEventListener('click', function() {
-            document.querySelector('.nav-links').classList.toggle('active');
-        });
-        
-        // Animatie la hover pentru imagini
-        const hoverZoomImages = document.querySelectorAll('.hover-zoom');
-        hoverZoomImages.forEach(img => {
-            img.addEventListener('mouseenter', () => {
-                img.style.transform = 'scale(1.05)';
-            });
-            img.addEventListener('mouseleave', () => {
-                img.style.transform = 'scale(1)';
-            });
-        });
-        
-        // Slider testimoniale
-        let currentTestimonial = 0;
-        const testimonials = document.querySelectorAll('.testimonial-slide');
-        
-        function showTestimonial(index) {
-            testimonials.forEach((testimonial, i) => {
-                testimonial.style.display = i === index ? 'block' : 'none';
-            });
-        }
-        
-        function nextTestimonial() {
-            currentTestimonial = (currentTestimonial + 1) % testimonials.length;
-            showTestimonial(currentTestimonial);
-        }
-        
-        // Schimbă testimonialul la fiecare 5 secunde
-        showTestimonial(0);
-        setInterval(nextTestimonial, 5000);
-    </script>
-</body>
-</html>
+        <div class="footer-content">
+            <div class="footer-column">
+                <h3>Terapie Viscerală</h3>
+                <p>O abordare holistică a sănătății prin echilibrarea sistemului visceral și restabilirea mobilității organelor interne.</p>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+            
+            <div class="footer-column">
+                <h3>Link-uri rapide</h3>
+                <ul class="footer-links">
+                    <li><a href="#despre">Despre terapie</a></li>
+                    <li><a href="#beneficii">Beneficii</a></li>
+                    <li><a href="#testimoniale">Păreri clienți</a></li>
+                    <li><a href="#sfaturi">Sfaturi</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-column">
+                <h3>Program
