@@ -255,15 +255,15 @@
         }
         
         .testimonials-section {
-        background: linear-gradient(135deg, var(--primary), var(--secondary));
-        padding: 4rem 2rem;
-        margin: 4rem auto;
-        color: white;
-        position: relative;
-        overflow: hidden;
-        border-radius: 30px;
-        max-width: 1200px;
-    }
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            padding: 4rem 2rem;
+            margin: 4rem auto;
+            color: white;
+            position: relative;
+            overflow: hidden;
+            border-radius: 30px;
+            max-width: 1200px;
+        }
         
         .testimonials-section::before {
             content: '';
@@ -284,14 +284,14 @@
         }
         
         .testimonial {
-        background: rgba(255,255,255,0.1);
-        backdrop-filter: blur(5px);
-        padding: 2rem;
-        border-radius: 50px; 
-        margin: 2rem 0;
-        position: relative;
-        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
-    	}
+            background: rgba(255,255,255,0.1);
+            backdrop-filter: blur(5px);
+            padding: 2rem;
+            border-radius: 50px;
+            margin: 2rem 0;
+            position: relative;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+        }
         
         .testimonial::before {
             content: '"';
@@ -666,7 +666,7 @@
 </head>
 <body>
     <header>
-        <div class="logo">Kinetoterapie iasi</div>
+        <div class="logo">Kinetoterapie Iasi</div>
         <p class="tagline">Cu Irina - Specialist în Terapie Manuală Viscerală</p>
         <a href="#contact" class="hero-btn">Programează o consultație</a>
     </header>
@@ -911,47 +911,40 @@
                         </div>
                     </div>
                 </div>
+                
                 <div class="contact-form">
-    <form action="https://formspree.io/f/ennl2qqg" method="POST">
-        <div class="form-group">
-            <label for="name">Nume complet</label>
-            <input type="text" id="name" name="name" required>
-        </div>
-        
-        <div class="form-group">
-            <label for="phone">Telefon</label>
-            <input type="tel" id="phone" name="phone" required>
-        </div>
-        
-        <div class="form-group">
-            <label for="email">Email</label>
-            <input type="email" id="email" name="email">
-        </div>
-        
-        <div class="form-group">
-            <label for="service">Tip de terapie</label>
-            <select id="service" name="service">
-                <option value="consultatie">Consultație inițială</option>
-                <option value="standard">Ședință standard</option>
-                <option value="intensiv">Program intensiv</option>
-                <option value="postchirurgical">Recuperare post-chirurgicală</option>
-            </select>
-        </div>
-        
-        <div class="form-group">
-            <label for="message">Mesaj</label>
-            <textarea id="message" name="message" rows="5"></textarea>
-        </div>
-        
-        <button type="submit" class="submit-btn">Programează</button>
-    </form>
-</div>
-    <div class="form-group">
-        <label for="message">Mesaj</label>
-        <textarea id="message" name="message" rows="5"></textarea> 
-    </div>
-
-    <button type="submit" class="submit-btn">Programează</button>
+                    <form action="https://formspree.io/f/ennl2qqg" method="POST">
+                        <div class="form-group">
+                            <label for="name">Nume complet</label>
+                            <input type="text" id="name" name="nume_complet" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="phone">Telefon</label>
+                            <input type="tel" id="phone" name="telefon" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" name="email">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="service">Tip de terapie</label>
+                            <select id="service" name="tip_terapie">
+                                <option value="consultatie">Consultație inițială</option>
+                                <option value="standard">Ședință standard</option>
+                                <option <option value="intensiv">Program intensiv</option>
+                                <option value="postchirurgical">Recuperare post-chirurgicală</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="message">Mesaj</label>
+                            <textarea id="message" name="mesaj" rows="5"></textarea>
+                        </div>
+                        
+                        <button type="submit" class="submit-btn">Programează</button>
                     </form>
                 </div>
             </div>
@@ -961,134 +954,56 @@
     <footer>
         <div class="footer-content">
             <div class="footer-column">
-                <h3>Terapie Viscerală</h3>
-                <p>O abordare holistică a sănătății prin echilibrarea sistemului visceral și restabilirea mobilității organelor interne.</p>
+                <h3>Kinetoterapie Iasi</h3>
+                <p>Specialist în Terapie Manuală Viscerală</p>
                 <div class="social-links">
-                    <a href="#"><i class="fab fa-facebook-f"></i></a>
-                    <a href="#"><i class="fab fa-instagram"></i></a>
-                    <a href="#"><i class="fab fa-youtube"></i></a>
+                    <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
                 </div>
             </div>
             
             <div class="footer-column">
-                <h3>Link-uri rapide</h3>
+                <h3>Link-uri Utile</h3>
                 <ul class="footer-links">
-                    <li><a href="#despre">Despre terapie</a></li>
+                    <li><a href="#despre">Despre Terapie</a></li>
                     <li><a href="#beneficii">Beneficii</a></li>
-                    <li><a href="#testimoniale">Păreri clienți</a></li>
-                    <li><a href="#sfaturi">Sfaturi</a></li>
+                    <li><a href="#testimoniale">Păreri Clienți</a></li>
+                    <li><a href="#galerie">Galerie Foto</a></li>
+                    <li><a href="#sfaturi">Sfaturi Utile</a></li>
                     <li><a href="#contact">Contact</a></li>
                 </ul>
             </div>
             
             <div class="footer-column">
-                <h3>Program</h3>
-                <ul class="footer-links">
-                    <li>Luni-Vineri: 9:00-18:00</li>
-                    <li>Sâmbătă: 10:00-14:00</li>
-                    <li>Duminică: Închis</li>
-                    <li>Programări la telefon sau online</li>
-                </ul>
+                <h3>Contact Rapid</h3>
+                <p>Strada Terapiei Viscerale nr. 10, București</p>
+                <p>Telefon: +40 721 123 456</p>
+                <p>Email: contact@irina-terapieviscerala.ro</p>
             </div>
         </div>
-        
         <div class="copyright">
-            <p>&copy; 2025 Irina Terapie Viscerală. Toate drepturile rezervate.</p>
+            <p>&copy; 2025 Kinetoterapie Iasi. Toate drepturile rezervate.</p>
         </div>
     </footer>
-    
+
     <script>
-        // ...existing code...
-// Smooth scroll pentru link-uri cu efect de slide
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function(e) {
-        e.preventDefault();
-        const target = document.querySelector(this.getAttribute('href'));
-        if (!target) return;
-
-        const headerOffset = 0; // ajustează dacă ai un header sticky
-        const elementPosition = target.getBoundingClientRect().top;
-        const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
-
-        smoothScrollTo(offsetPosition, 700);
-
-        // Închide meniul mobil după click
-        if (window.innerWidth <= 768) {
-            document.querySelector('.nav-links').classList.remove('active');
-        }
-    });
-});
-
-// Funcție de scroll animat cu easing
-function smoothScrollTo(targetY, duration) {
-    const startY = window.pageYOffset;
-    const distance = targetY - startY;
-    let startTime = null;
-
-    function animation(currentTime) {
-        if (!startTime) startTime = currentTime;
-        const timeElapsed = currentTime - startTime;
-        const run = easeInOutQuad(timeElapsed, startY, distance, duration);
-        window.scrollTo(0, run);
-        if (timeElapsed < duration) {
-            requestAnimationFrame(animation);
-        } else {
-            window.scrollTo(0, targetY);
-        }
-    }
-
-    function easeInOutQuad(t, b, c, d) {
-        t /= d/2;
-        if (t < 1) return c/2*t*t + b;
-        t--;
-        return -c/2 * (t*(t-2) - 1) + b;
-    }
-
-    requestAnimationFrame(animation);
-}
-// ...existing code...
-    </script>
-    <script>
-    document.addEventListener('DOMContentLoaded', function() {
-        const urlParams = new URLSearchParams(window.location.search);
-        const status = urlParams.get('status');
-        const contactForm = document.querySelector('.contact-form'); // Asigură-te că selectezi corect elementul părinte al formularului
-
-        if (status) {
-            const messageDiv = document.createElement('div');
-            messageDiv.style.padding = '1rem';
-            messageDiv.style.marginBottom = '1.5rem';
-            messageDiv.style.borderRadius = '5px';
-            messageDiv.style.textAlign = 'center';
-
-            if (status === 'success') {
-                messageDiv.style.backgroundColor = '#d4edda';
-                messageDiv.style.color = '#155724';
-                messageDiv.textContent = 'Programarea a fost trimisă cu succes! Veți fi contactat(ă) în curând.';
-            } else if (status === 'error') {
-                messageDiv.style.backgroundColor = '#f8d7da';
-                messageDiv.style.color = '#721c24';
-                messageDiv.textContent = 'A apărut o eroare la trimiterea programării. Vă rugăm să încercați din nou.';
-            }
-            // Inserează mesajul înainte de formular
-            if (contactForm) {
-                contactForm.prepend(messageDiv);
-            }
-
-            // Elimină parametrii din URL după afișare pentru o experiență mai curată
-            history.replaceState({}, document.title, window.location.pathname);
-        }
-
-        // Script pentru meniul mobil
+        // JavaScript pentru meniul mobil
         const menuToggle = document.querySelector('.menu-toggle');
         const navLinks = document.querySelector('.nav-links');
 
-        if (menuToggle && navLinks) {
-            menuToggle.addEventListener('click', () => {
-                navLinks.classList.toggle('active');
+        menuToggle.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+        });
+
+        // Închide meniul la click pe un link (doar pe mobil)
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                if (navLinks.classList.contains('active')) {
+                    navLinks.classList.remove('active');
+                }
             });
-        }
-    });
-</script>
+        });
+    </script>
 </body>
 </html>
