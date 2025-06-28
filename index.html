@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Terapie Viscerală | Irina Masaj</title>
+    <title data-key="page_title">Terapie Viscerală | Irina Masaj</title>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
         
@@ -589,6 +589,36 @@
             color: #bbb;
         }
         
+        /* Language Switcher Styles */
+        .language-switcher {
+            display: flex;
+            gap: 10px;
+            margin-left: 20px; /* Adjust as needed */
+        }
+
+        .language-switcher button {
+            background-color: var(--primary);
+            color: white;
+            border: none;
+            padding: 8px 12px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: background-color 0.3s, transform 0.2s;
+        }
+
+        .language-switcher button:hover {
+            background-color: var(--accent);
+            color: var(--dark);
+            transform: translateY(-2px);
+        }
+
+        .language-switcher button.active {
+            background-color: var(--accent);
+            color: var(--dark);
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+        }
+
         /* Animations */
         @keyframes fadeIn {
             from { opacity: 0; }
@@ -660,6 +690,12 @@
             .about-text, .contact-info, .contact-form {
                 flex: 1 1 100%;
             }
+
+            .language-switcher {
+                margin-left: 0; /* Center on mobile */
+                justify-content: center;
+                margin-top: 1rem;
+            }
         }
     </style>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
@@ -667,28 +703,32 @@
 <body>
     <header>
         <div class="logo">Kinetoterapie Iasi</div>
-        <p class="tagline">Cu Irina - Specialist în Terapie Manuală Viscerală</p>
-        <a href="#contact" class="hero-btn">Programează o consultație</a>
+        <p class="tagline" data-key="header_tagline">Cu Irina - Specialist în Terapie Manuală Viscerală</p>
+        <a href="#contact" class="hero-btn" data-key="hero_button">Programează o consultație</a>
     </header>
     
     <nav>
         <div class="nav-container">
             <div class="menu-toggle">☰</div>
             <ul class="nav-links">
-                <li><a href="#despre">Despre Terapie</a></li>
-                <li><a href="#beneficii">Beneficii</a></li>
-                <li><a href="#testimoniale">Păreri</a></li>
-                <li><a href="#galerie">Galerie</a></li>
-                <li><a href="#sfaturi">Sfaturi</a></li>
-                <li><a href="#contact">Contact</a></li>
+                <li><a href="#despre" data-key="nav_about">Despre Terapie</a></li>
+                <li><a href="#beneficii" data-key="nav_benefits">Beneficii</a></li>
+                <li><a href="#testimoniale" data-key="nav_testimonials">Păreri</a></li>
+                <li><a href="#galerie" data-key="nav_gallery">Galerie</a></li>
+                <li><a href="#sfaturi" data-key="nav_advice">Sfaturi</a></li>
+                <li><a href="#contact" data-key="nav_contact">Contact</a></li>
             </ul>
+            <div class="language-switcher">
+                <button id="lang-ro" class="active">RO</button>
+                <button id="lang-en">EN</button>
+            </div>
         </div>
     </nav>
     
     <main>
         <section id="despre">
             <div class="section-title">
-                <h2>Despre Terapia Viscerală</h2>
+                <h2 data-key="about_title">Despre Terapia Viscerală</h2>
             </div>
             
             <div class="about-container">
@@ -696,18 +736,18 @@
                     <img src="https://images.unsplash.com/photo-1585435557343-3b092031a831?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="Terapie Viscerală">
                 </div>
                 <div class="about-text">
-                    <h3>Ce este terapia viscerală?</h3>
-                    <p>Terapia viscerală este o formă specializată de terapie manuală care se concentrează pe organele interne (viscerale) și pe relația lor cu structurile musculo-scheletale ale corpului.</p>
-                    <p>Ca terapeut cu peste 10 ani de experiență, aplic tehnici delicate pentru a identifica și corecta restricțiile de mișcare sau tensiunile din sistemul visceral, care pot fi sursa multor dureri și disconforturi.</p>
-                    <p>Terapia mea se adresează atât problemelor acute, cât și celor cronice, oferind o abordare holistică a sănătății.</p>
-                    <p><strong>"Organele noastre au propria lor mobilitate și motilitate, iar când acestea sunt perturbate, întregul corp suferă."</strong> - Irina, Terapeut Visceral</p>
+                    <h3 data-key="about_subtitle">Ce este terapia viscerală?</h3>
+                    <p data-key="about_p1">Terapia viscerală este o formă specializată de terapie manuală care se concentrează pe organele interne (viscerale) și pe relația lor cu structurile musculo-scheletale ale corpului.</p>
+                    <p data-key="about_p2">Ca terapeut cu peste 10 ani de experiență, aplic tehnici delicate pentru a identifica și corecta restricțiile de mișcare sau tensiunile din sistemul visceral, care pot fi sursa multor dureri și disconforturi.</p>
+                    <p data-key="about_p3">Terapia mea se adresează atât problemelor acute, cât și celor cronice, oferind o abordare holistică a sănătății.</p>
+                    <p data-key="about_quote"><strong>"Organele noastre au propria lor mobilitate și motilitate, iar când acestea sunt perturbate, întregul corp suferă."</strong> - Irina, Terapeut Visceral</p>
                 </div>
             </div>
         </section>
         
         <section id="beneficii">
             <div class="section-title">
-                <h2>Beneficiile Terapiei Viscerale</h2>
+                <h2 data-key="benefits_title">Beneficiile Terapiei Viscerale</h2>
             </div>
             
             <div class="benefits-grid">
@@ -715,76 +755,76 @@
                     <div class="benefit-icon">
                         <i class="fas fa-heartbeat"></i>
                     </div>
-                    <h3>Îmbunătățirea funcției digestive</h3>
-                    <p>Alină problemele de constipație, balonare, arsuri gastrice și sindromul intestinului iritabil prin normalizarea mobilității organelor digestive.</p>
+                    <h3 data-key="benefit1_title">Îmbunătățirea funcției digestive</h3>
+                    <p data-key="benefit1_desc">Alină problemele de constipație, balonare, arsuri gastrice și sindromul intestinului iritabil prin normalizarea mobilității organelor digestive.</p>
                 </div>
                 
                 <div class="benefit-card">
                     <div class="benefit-icon">
                         <i class="fas fa-bone"></i>
                     </div>
-                    <h3>Reducerea durerilor de spate</h3>
-                    <p>Multe dureri lombare sau dorsale au originea în tensiuni ale organelor interne care tracționează structurile musculo-scheletale.</p>
+                    <h3 data-key="benefit2_title">Reducerea durerilor de spate</h3>
+                    <p data-key="benefit2_desc">Multe dureri lombare sau dorsale au originea în tensiuni ale organelor interne care tracționează structurile musculo-scheletale.</p>
                 </div>
                 
                 <div class="benefit-card">
                     <div class="benefit-icon">
                         <i class="fas fa-lungs"></i>
                     </div>
-                    <h3>Optimizarea funcției respiratorii</h3>
-                    <p>Eliberează restricțiile diafragmatice și improvează capacitatea pulmonară prin manipularea delicată a plămânilor și a structurilor adiacente.</p>
+                    <h3 data-key="benefit3_title">Optimizarea funcției respiratorii</h3>
+                    <p data-key="benefit3_desc">Eliberează restricțiile diafragmatice și improvează capacitatea pulmonară prin manipularea delicată a plămânilor și a structurilor adiacente.</p>
                 </div>
                 
                 <div class="benefit-card">
                     <div class="benefit-icon">
                         <i class="fas fa-female"></i>
                     </div>
-                    <h3>Echilibrarea sistemului reproducător</h3>
-                    <p>Ajută la ameliorarea durerilor menstruale, a sindromului premenstrual și a altor disfuncții ale sistemului reproducător feminin.</p>
+                    <h3 data-key="benefit4_title">Echilibrarea sistemului reproducător</h3>
+                    <p data-key="benefit4_desc">Ajută la ameliorarea durerilor menstruale, a sindromului premenstrual și a altor disfuncții ale sistemului reproducător feminin.</p>
                 </div>
                 
                 <div class="benefit-card">
                     <div class="benefit-icon">
                         <i class="fas fa-brain"></i>
                     </div>
-                    <h3>Reducerea stresului și anxietății</h3>
-                    <p>Organele digestive sunt strâns legate de sistemul nervos, iar terapia viscerală poate induce o stare profundă de relaxare și echilibru.</p>
+                    <h3 data-key="benefit5_title">Reducerea stresului și anxietății</h3>
+                    <p data-key="benefit5_desc">Organele digestive sunt strâns legate de sistemul nervos, iar terapia viscerală poate induce o stare profundă de relaxare și echilibru.</p>
                 </div>
                 
                 <div class="benefit-card">
                     <div class="benefit-icon">
                         <i class="fas fa-hands-helping"></i>
                     </div>
-                    <h3>Recuperare post-chirurgicală</h3>
-                    <p>Ajută la prevenirea aderențelor și restabilirea mobilității normale după intervenții chirurgicale abdominale sau pelvine.</p>
+                    <h3 data-key="benefit6_title">Recuperare post-chirurgicală</h3>
+                    <p data-key="benefit6_desc">Ajută la prevenirea aderențelor și restabilirea mobilității normale după intervenții chirurgicale abdominale sau pelvine.</p>
                 </div>
             </div>
         </section>
         
         <section id="testimoniale" class="testimonials-section">
             <div class="section-title">
-                <h2 style="color: white;">Părerile Clienților Noștri</h2>
+                <h2 style="color: white;" data-key="testimonials_title">Părerile Clienților Noștri</h2>
             </div>
             
             <div class="testimonial-container">
                 <div class="testimonial">
-                    <p class="testimonial-text">După ani de suferință cu sindromul intestinului iritabil și dureri lombare cronice, terapia viscerală cu Irina a fost revelația care a schimbat viața mea. După doar câteva ședințe, simptomele mele s-au ameliorat semnificativ.</p>
+                    <p class="testimonial-text" data-key="testimonial1_text">După ani de suferință cu sindromul intestinului iritabil și dureri lombare cronice, terapia viscerală cu Irina a fost revelația care a schimbat viața mea. După doar câteva ședințe, simptomele mele s-au ameliorat semnificativ.</p>
                     <div class="testimonial-author">
                         <img src="https://randomuser.me/api/portraits/women/65.jpg" alt="Ana M.">
                         <div>
-                            <h4>Ana M.</h4>
-                            <p>Client din 2022</p>
+                            <h4 data-key="testimonial1_author">Ana M.</h4>
+                            <p data-key="testimonial1_role">Client din 2022</p>
                         </div>
                     </div>
                 </div>
                 
                 <div class="testimonial">
-                    <p class="testimonial-text">Ca sportiv profesionist, am avut mereu probleme cu digestia sub stres. Terapia viscerală m-a ajutat nu doar să-mi îmbunătățesc funcția digestivă, dar și să-mi sporesc performanța prin respirație mai eficientă.</p>
+                    <p class="testimonial-text" data-key="testimonial2_text">Ca sportiv profesionist, am avut mereu probleme cu digestia sub stres. Terapia viscerală m-a ajutat nu doar să-mi îmbunătățesc funcția digestivă, dar și să-mi sporesc performanța prin respirație mai eficientă.</p>
                     <div class="testimonial-author">
                         <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Alexandru P.">
                         <div>
-                            <h4>Alexandru P.</h4>
-                            <p>Atlet</p>
+                            <h4 data-key="testimonial2_author">Alexandru P.</h4>
+                            <p data-key="testimonial2_role">Atlet</p>
                         </div>
                     </div>
                 </div>
@@ -793,68 +833,68 @@
         
         <section id="galerie">
             <div class="section-title">
-                <h2>Galerie Foto</h2>
+                <h2 data-key="gallery_title">Galerie Foto</h2>
             </div>
             
             <div class="gallery-grid">
                 <div class="gallery-item">
                     <img src="https://images.unsplash.com/photo-1585435557343-3b092031a831?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="Terapie Viscerală 1">
-                    <div class="gallery-caption">Tehnici de evaluare viscerală</div>
+                    <div class="gallery-caption" data-key="gallery1_caption">Tehnici de evaluare viscerală</div>
                 </div>
                 
                 <div class="gallery-item">
                     <img src="https://images.unsplash.com/photo-1571019614242-c5c5dee9f50b?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="Terapie Viscerală 2">
-                    <div class="gallery-caption">Lucrul pe zona abdominală</div>
+                    <div class="gallery-caption" data-key="gallery2_caption">Lucrul pe zona abdominală</div>
                 </div>
                 
                 <div class="gallery-item">
                     <img src="https://images.unsplash.com/photo-1544161515-4ab6ce6db874?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="Terapie Viscerală 3">
-                    <div class="gallery-caption">Tehnici de mobilitate viscerală</div>
+                    <div class="gallery-caption" data-key="gallery3_caption">Tehnici de mobilitate viscerală</div>
                 </div>
                 
                 <div class="gallery-item">
                     <img src="https://images.unsplash.com/photo-1551650975-87deedd944c3?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="Terapie Viscerală 4">
-                    <div class="gallery-caption">Echipament specializat</div>
+                    <div class="gallery-caption" data-key="gallery4_caption">Echipament specializat</div>
                 </div>
             </div>
         </section>
         
         <section id="sfaturi">
             <div class="section-title">
-                <h2>Sfaturi și Recomandări</h2>
+                <h2 data-key="advice_title">Sfaturi și Recomandări</h2>
             </div>
             
             <div class="advice-container">
                 <div class="advice-item">
-                    <h3>Cum să te pregătești pentru o ședință de terapie viscerală</h3>
-                    <p>Pentru a obține rezultate optime, recomand următoarele:</p>
+                    <h3 data-key="advice1_title">Cum să te pregătești pentru o ședință de terapie viscerală</h3>
+                    <p data-key="advice1_p1">Pentru a obține rezultate optime, recomand următoarele:</p>
                     <ul style="margin-left: 2rem; line-height: 1.8;">
-                        <li>Evitați mesele copioase cu 2-3 ore înainte de ședință</li>
-                        <li>Purtați haine comode, preferabil din materiale naturale</li>
-                        <li>Mențineți-vă hidratați în zilele premergătoare ședinței</li>
-                        <li>Notați-vă orice simptome sau disconforturi pe care doriți să le discutați</li>
+                        <li data-key="advice1_li1">Evitați mesele copioase cu 2-3 ore înainte de ședință</li>
+                        <li data-key="advice1_li2">Purtați haine comode, preferabil din materiale naturale</li>
+                        <li data-key="advice1_li3">Mențineți-vă hidratați în zilele premergătoare ședinței</li>
+                        <li data-key="advice1_li4">Notați-vă orice simptome sau disconforturi pe care doriți să le discutați</li>
                     </ul>
                 </div>
                 
                 <div class="advice-item">
-                    <h3>Ce să așteptări să ai după terapie</h3>
-                    <p>După o ședință de terapie viscerală, corpul tău continuă să se regleze. Poți experimenta:</p>
+                    <h3 data-key="advice2_title">Ce să așteptări să ai după terapie</h3>
+                    <p data-key="advice2_p1">După o ședință de terapie viscerală, corpul tău continuă să se regleze. Poți experimenta:</p>
                     <ul style="margin-left: 2rem; line-height: 1.8;">
-                        <li>O senzație de ușurare și relaxare profundă</li>
-                        <li>Modificări în tranzitul intestinal (temporare)</li>
-                        <li>Dorindu-ți să bei mai multă apă</li>
-                        <li>O stare generală de bine care se intensifică în următoarele zile</li>
+                        <li data-key="advice2_li1">O senzație de ușurare și relaxare profundă</li>
+                        <li data-key="advice2_li2">Modificări în tranzitul intestinal (temporare)</li>
+                        <li data-key="advice2_li3">Dorindu-ți să bei mai multă apă</li>
+                        <li data-key="advice2_li4">O stare generală de bine care se intensifică în următoarele zile</li>
                     </ul>
-                    <p><strong>"Ascultă mereu corpul tău - el îți va spune exact de ce are nevoie după terapie."</strong> - Irina</p>
+                    <p data-key="advice2_quote"><strong>"Ascultă mereu corpul tău - el îți va spune exact de ce are nevoie după terapie."</strong> - Irina</p>
                 </div>
                 
                 <div class="advice-item">
-                    <h3>Exerciții simple pentru acasă</h3>
-                    <p>Pentru a menține beneficiile terapiei între ședințe, recomand aceste exerciții simple:</p>
+                    <h3 data-key="advice3_title">Exerciții simple pentru acasă</h3>
+                    <p data-key="advice3_p1">Pentru a menține beneficiile terapiei între ședințe, recomand aceste exerciții simple:</p>
                     <ol style="margin-left: 2rem; line-height: 1.8;">
-                        <li><strong>Respirația diafragmatică:</strong> 5 minute pe zi, cu mâna pe abdomen pentru a simți mișcarea</li>
-                        <li><strong>Rotații pelvine lente:</strong> În poziție culcată, cu genunchii îndoiți</li>
-                        <li><strong>Auto-masaj abdominal:</strong> Cu mișcări circulare lente, în sensul acelor de ceasornic</li>
+                        <li data-key="advice3_li1"><strong>Respirația diafragmatică:</strong> 5 minute pe zi, cu mâna pe abdomen pentru a simți mișcarea</li>
+                        <li data-key="advice3_li2"><strong>Rotații pelvine lente:</strong> În poziție culcată, cu genunchii îndoiți</li>
+                        <li data-key="advice3_li3"><strong>Auto-masaj abdominal:</strong> Cu mișcări circulare lente, în sensul acelor de ceasornic</li>
                     </ol>
                 </div>
             </div>
@@ -862,20 +902,20 @@
         
         <section id="contact">
             <div class="section-title">
-                <h2>Programează o ședință</h2>
+                <h2 data-key="contact_title">Programează o ședință</h2>
             </div>
             
             <div class="contact-section">
                 <div class="contact-info">
-                    <h3>Date de contact</h3>
+                    <h3 data-key="contact_info_title">Date de contact</h3>
                     
                     <div class="contact-detail">
                         <div class="contact-icon">
                             <i class="fas fa-map-marker-alt"></i>
                         </div>
                         <div class="contact-text">
-                            <h4>Adresă</h4>
-                            <p>Strada Terapiei Viscerale nr. 10, București</p>
+                            <h4 data-key="contact_address_heading">Adresă</h4>
+                            <p data-key="contact_address_text">Strada Terapiei Viscerale nr. 10, București</p>
                         </div>
                     </div>
                     
@@ -884,8 +924,8 @@
                             <i class="fas fa-phone-alt"></i>
                         </div>
                         <div class="contact-text">
-                            <h4>Telefon</h4>
-                            <p>+40 721 123 456</p>
+                            <h4 data-key="contact_phone_heading">Telefon</h4>
+                            <p data-key="contact_phone_text">+40 721 123 456</p>
                         </div>
                     </div>
                     
@@ -894,8 +934,8 @@
                             <i class="fas fa-envelope"></i>
                         </div>
                         <div class="contact-text">
-                            <h4>Email</h4>
-                            <p>contact@irina-terapieviscerala.ro</p>
+                            <h4 data-key="contact_email_heading">Email</h4>
+                            <p data-key="contact_email_text">contact@irina-terapieviscerala.ro</p>
                         </div>
                     </div>
                     
@@ -904,10 +944,10 @@
                             <i class="fas fa-clock"></i>
                         </div>
                         <div class="contact-text">
-                            <h4>Program</h4>
-                            <p>Luni-Vineri: 9:00 - 18:00</p>
-                            <p>Sâmbătă: 10:00 - 14:00</p>
-                            <p>Duminică: Închis</p>
+                            <h4 data-key="contact_program_heading">Program</h4>
+                            <p data-key="contact_program_monfri">Luni-Vineri: 9:00 - 18:00</p>
+                            <p data-key="contact_program_sat">Sâmbătă: 10:00 - 14:00</p>
+                            <p data-key="contact_program_sun">Duminică: Închis</p>
                         </div>
                     </div>
                 </div>
@@ -915,36 +955,36 @@
                 <div class="contact-form">
                     <form action="https://formspree.io/f/xnnvlgoq" method="POST">
                         <div class="form-group">
-                            <label for="name">Nume complet</label>
+                            <label for="name" data-key="form_name_label">Nume complet</label>
                             <input type="text" id="name" name="nume_complet" required>
                         </div>
                         
                         <div class="form-group">
-                            <label for="phone">Telefon</label>
+                            <label for="phone" data-key="form_phone_label">Telefon</label>
                             <input type="tel" id="phone" name="telefon" required>
                         </div>
                         
                         <div class="form-group">
-                            <label for="email">Email</label>
+                            <label for="email" data-key="form_email_label">Email</label>
                             <input type="email" id="email" name="email">
                         </div>
                         
                         <div class="form-group">
-                            <label for="service">Tip de terapie</label>
+                            <label for="service" data-key="form_service_label">Tip de terapie</label>
                             <select id="service" name="tip_terapie">
-                                <option value="consultatie">Consultație inițială</option>
-                                <option value="standard">Ședință standard</option>
-                                <option <option value="intensiv">Program intensiv</option>
-                                <option value="postchirurgical">Recuperare post-chirurgicală</option>
+                                <option value="consultatie" data-key="option_consultation">Consultație inițială</option>
+                                <option value="standard" data-key="option_standard">Ședință standard</option>
+                                <option value="intensiv" data-key="option_intensive">Program intensiv</option>
+                                <option value="postchirurgical" data-key="option_postsurgery">Recuperare post-chirurgicală</option>
                             </select>
                         </div>
                         
                         <div class="form-group">
-                            <label for="message">Mesaj</label>
+                            <label for="message" data-key="form_message_label">Mesaj</label>
                             <textarea id="message" name="mesaj" rows="5"></textarea>
                         </div>
-                        
-                        <button type="submit" class="submit-btn">Programează</button>
+
+                        <button type="submit" class="submit-btn" data-key="form_submit_button">Programează</button>
                     </form>
                 </div>
             </div>
@@ -954,41 +994,292 @@
     <footer>
         <div class="footer-content">
             <div class="footer-column">
-                <h3>Kinetoterapie Iasi</h3>
-                <p>Specialist în Terapie Manuală Viscerală</p>
-                <div class="social-links">
-                    <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
-                    <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-                    <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
-                </div>
+                <h3 data-key="footer_about_title">Despre Noi</h3>
+                <p data-key="footer_about_text">Oferim servicii de kinetoterapie și terapie viscerală de înaltă calitate în Iași, cu o abordare personalizată pentru fiecare pacient.</p>
             </div>
-            
             <div class="footer-column">
-                <h3>Link-uri Utile</h3>
+                <h3 data-key="footer_links_title">Link-uri Rapide</h3>
                 <ul class="footer-links">
-                    <li><a href="#despre">Despre Terapie</a></li>
-                    <li><a href="#beneficii">Beneficii</a></li>
-                    <li><a href="#testimoniale">Păreri Clienți</a></li>
-                    <li><a href="#galerie">Galerie Foto</a></li>
-                    <li><a href="#sfaturi">Sfaturi Utile</a></li>
-                    <li><a href="#contact">Contact</a></li>
+                    <li><a href="#despre" data-key="nav_about_footer">Despre Terapie</a></li>
+                    <li><a href="#beneficii" data-key="nav_benefits_footer">Beneficii</a></li>
+                    <li><a href="#testimoniale" data-key="nav_testimonials_footer">Păreri</a></li>
+                    <li><a href="#galerie" data-key="nav_gallery_footer">Galerie</a></li>
+                    <li><a href="#sfaturi" data-key="nav_advice_footer">Sfaturi</a></li>
+                    <li><a href="#contact" data-key="nav_contact_footer">Contact</a></li>
                 </ul>
             </div>
-            
             <div class="footer-column">
-                <h3>Contact Rapid</h3>
-                <p>Strada Terapiei Viscerale nr. 10, București</p>
-                <p>Telefon: +40 721 123 456</p>
-                <p>Email: contact@irina-terapieviscerala.ro</p>
+                <h3 data-key="footer_contact_title">Contact</h3>
+                <p data-key="footer_contact_address_text">Strada Terapiei Viscerale nr. 10, București</p>
+                <p data-key="footer_contact_phone_text">+40 721 123 456</p>
+                <p data-key="footer_contact_email_text">contact@irina-terapieviscerala.ro</p>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                </div>
             </div>
         </div>
-        <div class="copyright">
-            <p>&copy; 2025 Kinetoterapie Iasi. Toate drepturile rezervate.</p>
-        </div>
+        <div class="copyright" data-key="footer_copyright">&copy; 2025 Kinetoterapie Irina. Toate drepturile rezervate.</div>
     </footer>
 
     <script>
-        // JavaScript pentru meniul mobil
+        // Data for translations
+        const translations = {
+            ro: {
+                page_title: "Terapie Viscerală | Irina Masaj",
+                header_tagline: "Cu Irina - Specialist în Terapie Manuală Viscerală",
+                hero_button: "Programează o consultație",
+                nav_about: "Despre Terapie",
+                nav_benefits: "Beneficii",
+                nav_testimonials: "Păreri",
+                nav_gallery: "Galerie",
+                nav_advice: "Sfaturi",
+                nav_contact: "Contact",
+                about_title: "Despre Terapia Viscerală",
+                about_subtitle: "Ce este terapia viscerală?",
+                about_p1: "Terapia viscerală este o formă specializată de terapie manuală care se concentrează pe organele interne (viscerale) și pe relația lor cu structurile musculo-scheletale ale corpului.",
+                about_p2: "Ca terapeut cu peste 10 ani de experiență, aplic tehnici delicate pentru a identifica și corecta restricțiile de mișcare sau tensiunile din sistemul visceral, care pot fi sursa multor dureri și disconforturi.",
+                about_p3: "Terapia mea se adresează atât problemelor acute, cât și celor cronice, oferind o abordare holistică a sănătății.",
+                about_quote: "<strong>\"Organele noastre au propria lor mobilitate și motilitate, iar când acestea sunt perturbate, întregul corp suferă.\"</strong> - Irina, Terapeut Visceral",
+                benefits_title: "Beneficiile Terapiei Viscerale",
+                benefit1_title: "Îmbunătățirea funcției digestive",
+                benefit1_desc: "Alină problemele de constipație, balonare, arsuri gastrice și sindromul intestinului iritabil prin normalizarea mobilității organelor digestive.",
+                benefit2_title: "Reducerea durerilor de spate",
+                benefit2_desc: "Multe dureri lombare sau dorsale au originea în tensiuni ale organelor interne care tracționează structurile musculo-scheletale.",
+                benefit3_title: "Optimizarea funcției respiratorii",
+                benefit3_desc: "Eliberează restricțiile diafragmatice și improvează capacitatea pulmonară prin manipularea delicată a plămânilor și a structurilor adiacente.",
+                benefit4_title: "Echilibrarea sistemului reproducător",
+                benefit4_desc: "Ajută la ameliorarea durerilor menstruale, a sindromului premenstrual și a altor disfuncții ale sistemului reproducător feminin.",
+                benefit5_title: "Reducerea stresului și anxietății",
+                benefit5_desc: "Organele digestive sunt strâns legate de sistemul nervos, iar terapia viscerală poate induce o stare profundă de relaxare și echilibru.",
+                benefit6_title: "Recuperare post-chirurgicală",
+                benefit6_desc: "Ajută la prevenirea aderențelor și restabilirea mobilității normale după intervenții chirurgicale abdominale sau pelvine.",
+                testimonials_title: "Părerile Clienților Noștri",
+                testimonial1_text: "După ani de suferință cu sindromul intestinului iritabil și dureri lombare cronice, terapia viscerală cu Irina a fost revelația care a schimbat viața mea. După doar câteva ședințe, simptomele mele s-au ameliorat semnificativ.",
+                testimonial1_author: "Ana M.",
+                testimonial1_role: "Client din 2022",
+                testimonial2_text: "Ca sportiv profesionist, am avut mereu probleme cu digestia sub stres. Terapia viscerală m-a ajutat nu doar să-mi îmbunătățesc funcția digestivă, dar și să-mi sporesc performanța prin respirație mai eficientă.",
+                testimonial2_author: "Alexandru P.",
+                testimonial2_role: "Atlet",
+                gallery_title: "Galerie Foto",
+                gallery1_caption: "Tehnici de evaluare viscerală",
+                gallery2_caption: "Lucrul pe zona abdominală",
+                gallery3_caption: "Tehnici de mobilitate viscerală",
+                gallery4_caption: "Echipament specializat",
+                advice_title: "Sfaturi și Recomandări",
+                advice1_title: "Cum să te pregătești pentru o ședință de terapie viscerală",
+                advice1_p1: "Pentru a obține rezultate optime, recomand următoarele:",
+                advice1_li1: "Evitați mesele copioase cu 2-3 ore înainte de ședință",
+                advice1_li2: "Purtați haine comode, preferabil din materiale naturale",
+                advice1_li3: "Mențineți-vă hidratați în zilele premergătoare ședinței",
+                advice1_li4: "Notați-vă orice simptome sau disconforturi pe care doriți să le discutați",
+                advice2_title: "Ce să așteptări să ai după terapie",
+                advice2_p1: "După o ședință de terapie viscerală, corpul tău continuă să se regleze. Poți experimenta:",
+                advice2_li1: "O senzație de ușurare și relaxare profundă",
+                advice2_li2: "Modificări în tranzitul intestinal (temporare)",
+                advice2_li3: "Dorindu-ți să bei mai multă apă",
+                advice2_li4: "O stare generală de bine care se intensifică în următoarele zile",
+                advice2_quote: "<strong>\"Ascultă mereu corpul tău - el îți va spune exact de ce are nevoie după terapie.\"</strong> - Irina",
+                advice3_title: "Exerciții simple pentru acasă",
+                advice3_p1: "Pentru a menține beneficiile terapiei între ședințe, recomand aceste exerciții simple:",
+                advice3_li1: "<strong>Respirația diafragmatică:</strong> 5 minute pe zi, cu mâna pe abdomen pentru a simți mișcarea",
+                advice3_li2: "<strong>Rotații pelvine lente:</strong> În poziție culcată, cu genunchii îndoiți",
+                advice3_li3: "<strong>Auto-masaj abdominal:</strong> Cu mișcări circulare lente, în sensul acelor de ceasornic",
+                contact_title: "Programează o ședință",
+                contact_info_title: "Date de contact",
+                contact_address_heading: "Adresă",
+                contact_address_text: "Strada Terapiei Viscerale nr. 10, București",
+                contact_phone_heading: "Telefon",
+                contact_phone_text: "+40 721 123 456",
+                contact_email_heading: "Email",
+                contact_email_text: "contact@irina-terapieviscerala.ro",
+                contact_program_heading: "Program",
+                contact_program_monfri: "Luni-Vineri: 9:00 - 18:00",
+                contact_program_sat: "Sâmbătă: 10:00 - 14:00",
+                contact_program_sun: "Duminică: Închis",
+                form_name_label: "Nume complet",
+                form_phone_label: "Telefon",
+                form_email_label: "Email",
+                form_service_label: "Tip de terapie",
+                option_consultation: "Consultație inițială",
+                option_standard: "Ședință standard",
+                option_intensive: "Program intensiv",
+                option_postsurgery: "Recuperare post-chirurgicală",
+                form_message_label: "Mesaj",
+                form_submit_button: "Programează",
+                footer_about_title: "Despre Noi",
+                footer_about_text: "Oferim servicii de kinetoterapie și terapie viscerală de înaltă calitate în Iași, cu o abordare personalizată pentru fiecare pacient.",
+                footer_links_title: "Link-uri Rapide",
+                nav_about_footer: "Despre Terapie",
+                nav_benefits_footer: "Beneficii",
+                nav_testimonials_footer: "Păreri",
+                nav_gallery_footer: "Galerie",
+                nav_advice_footer: "Sfaturi",
+                nav_contact_footer: "Contact",
+                footer_contact_title: "Contact",
+                footer_contact_address_text: "Strada Terapiei Viscerale nr. 10, București",
+                footer_contact_phone_text: "+40 721 123 456",
+                footer_contact_email_text: "contact@irina-terapieviscerala.ro",
+                footer_copyright: "&copy; 2025 Kinetoterapie Irina. Toate drepturile rezervate."
+            },
+            en: {
+                page_title: "Visceral Therapy | Irina Massage",
+                header_tagline: "With Irina - Specialist in Manual Visceral Therapy",
+                hero_button: "Schedule a consultation",
+                nav_about: "About Therapy",
+                nav_benefits: "Benefits",
+                nav_testimonials: "Testimonials",
+                nav_gallery: "Gallery",
+                nav_advice: "Advice",
+                nav_contact: "Contact",
+                about_title: "About Visceral Therapy",
+                about_subtitle: "What is visceral therapy?",
+                about_p1: "Visceral therapy is a specialized form of manual therapy that focuses on the internal organs (viscera) and their relationship with the musculoskeletal structures of the body.",
+                about_p2: "As a therapist with over 10 years of experience, I apply delicate techniques to identify and correct movement restrictions or tensions in the visceral system, which can be the source of many pains and discomforts.",
+                about_p3: "My therapy addresses both acute and chronic problems, offering a holistic approach to health.",
+                about_quote: "<strong>\"Our organs have their own mobility and motility, and when these are disturbed, the entire body suffers.\"</strong> - Irina, Visceral Therapist",
+                benefits_title: "Benefits of Visceral Therapy",
+                benefit1_title: "Improved digestive function",
+                benefit1_desc: "Relieves problems such as constipation, bloating, heartburn, and irritable bowel syndrome by normalizing the mobility of digestive organs.",
+                benefit2_title: "Reduced back pain",
+                benefit2_desc: "Many lower back or dorsal pains originate from tensions in internal organs that pull on musculoskeletal structures.",
+                benefit3_title: "Optimized respiratory function",
+                benefit3_desc: "Releases diaphragmatic restrictions and improves lung capacity through delicate manipulation of the lungs and adjacent structures.",
+                benefit4_title: "Balancing the reproductive system",
+                benefit4_desc: "Helps alleviate menstrual pain, premenstrual syndrome, and other dysfunctions of the female reproductive system.",
+                benefit5_title: "Reduced stress and anxiety",
+                benefit5_desc: "Digestive organs are closely linked to the nervous system, and visceral therapy can induce a deep state of relaxation and balance.",
+                benefit6_title: "Post-surgical recovery",
+                benefit6_desc: "Helps prevent adhesions and restore normal mobility after abdominal or pelvic surgeries.",
+                testimonials_title: "What Our Clients Say",
+                testimonial1_text: "After years of suffering from irritable bowel syndrome and chronic lower back pain, visceral therapy with Irina was a life-changing revelation. After just a few sessions, my symptoms significantly improved.",
+                testimonial1_author: "Ana M.",
+                testimonial1_role: "Client since 2022",
+                testimonial2_text: "As a professional athlete, I always had digestive issues under stress. Visceral therapy helped me not only improve my digestive function but also enhance my performance through more efficient breathing.",
+                testimonial2_author: "Alexandru P.",
+                testimonial2_role: "Athlete",
+                gallery_title: "Photo Gallery",
+                gallery1_caption: "Visceral evaluation techniques",
+                gallery2_caption: "Work on the abdominal area",
+                gallery3_caption: "Visceral mobility techniques",
+                gallery4_caption: "Specialized equipment",
+                advice_title: "Tips and Recommendations",
+                advice1_title: "How to prepare for a visceral therapy session",
+                advice1_p1: "To achieve optimal results, I recommend the following:",
+                advice1_li1: "Avoid heavy meals 2-3 hours before the session",
+                advice1_li2: "Wear comfortable clothing, preferably made of natural materials",
+                advice1_li3: "Stay hydrated in the days leading up to the session",
+                advice1_li4: "Note down any symptoms or discomforts you wish to discuss",
+                advice2_title: "What to expect after therapy",
+                advice2_p1: "After a visceral therapy session, your body continues to regulate itself. You may experience:",
+                advice2_li1: "A feeling of deep relief and relaxation",
+                advice2_li2: "Temporary changes in bowel transit",
+                advice2_li3: "A desire to drink more water",
+                advice2_li4: "A general sense of well-being that intensifies in the following days",
+                advice2_quote: "<strong>\"Always listen to your body - it will tell you exactly what it needs after therapy.\"</strong> - Irina",
+                advice3_title: "Simple exercises for home",
+                advice3_p1: "To maintain the benefits of therapy between sessions, I recommend these simple exercises:",
+                advice3_li1: "<strong>Diaphragmatic breathing:</strong> 5 minutes a day, with your hand on your abdomen to feel the movement",
+                advice3_li2: "<strong>Slow pelvic rotations:</strong> Lying down, with knees bent",
+                advice3_li3: "<strong>Abdominal self-massage:</strong> With slow circular movements, clockwise",
+                contact_title: "Schedule a session",
+                contact_info_title: "Contact Information",
+                contact_address_heading: "Address",
+                contact_address_text: "10 Visceral Therapy Street, Bucharest",
+                contact_phone_heading: "Phone",
+                contact_phone_text: "+40 721 123 456",
+                contact_email_heading: "Email",
+                contact_email_text: "contact@irina-terapieviscerala.ro",
+                contact_program_heading: "Program",
+                contact_program_monfri: "Monday-Friday: 9:00 AM - 6:00 PM",
+                contact_program_sat: "Saturday: 10:00 AM - 2:00 PM",
+                contact_program_sun: "Sunday: Closed",
+                form_name_label: "Full Name",
+                form_phone_label: "Phone",
+                form_email_label: "Email",
+                form_service_label: "Type of therapy",
+                option_consultation: "Initial Consultation",
+                option_standard: "Standard Session",
+                option_intensive: "Intensive Program",
+                option_postsurgery: "Post-surgical Recovery",
+                form_message_label: "Message",
+                form_submit_button: "Schedule",
+                footer_about_title: "About Us",
+                footer_about_text: "We offer high-quality Kinetotherapy and Visceral Therapy services in Iași, with a personalized approach for each patient.",
+                footer_links_title: "Quick Links",
+                nav_about_footer: "About Therapy",
+                nav_benefits_footer: "Benefits",
+                nav_testimonials_footer: "Testimonials",
+                nav_gallery_footer: "Gallery",
+                nav_advice_footer: "Advice",
+                nav_contact_footer: "Contact",
+                footer_contact_title: "Contact",
+                footer_contact_address_text: "10 Visceral Therapy Street, Bucharest",
+                footer_contact_phone_text: "+40 721 123 456",
+                footer_contact_email_text: "contact@irina-terapieviscerala.ro",
+                footer_copyright: "&copy; 2025 Kinetoterapie Irina. All rights reserved."
+            }
+        };
+
+        // Function to apply translation
+        function applyLanguage(lang) {
+            document.querySelectorAll('[data-key]').forEach(element => {
+                const key = element.getAttribute('data-key');
+                if (translations[lang] && translations[lang][key]) {
+                    // For input/select options, update placeholder/value or option text
+                    if (element.tagName === 'INPUT' && element.hasAttribute('placeholder')) {
+                        element.setAttribute('placeholder', translations[lang][key]);
+                    } else if (element.tagName === 'OPTION') {
+                         element.textContent = translations[lang][key];
+                    } else if (element.tagName === 'LABEL') {
+                        element.textContent = translations[lang][key];
+                    }
+                    else {
+                        element.innerHTML = translations[lang][key];
+                    }
+                }
+            });
+
+            // Update specific cases not covered by data-key (e.g., placeholder, option texts within select)
+            const serviceOptionsRo = [
+                "Consultație inițială",
+                "Ședință standard",
+                "Program intensiv",
+                "Recuperare post-chirurgicală"
+            ];
+            const serviceOptionsEn = [
+                "Initial Consultation",
+                "Standard Session",
+                "Intensive Program",
+                "Post-surgical Recovery"
+            ];
+            const selectElement = document.getElementById('service');
+            if (selectElement) {
+                const options = selectElement.options;
+                for (let i = 0; i < options.length; i++) {
+                    if (lang === 'ro') {
+                        options[i].textContent = serviceOptionsRo[i];
+                    } else {
+                        options[i].textContent = serviceOptionsEn[i];
+                    }
+                }
+            }
+
+            // Update the lang attribute of the HTML tag
+            document.documentElement.setAttribute('lang', lang);
+
+            // Update active button styling
+            document.getElementById('lang-ro').classList.remove('active');
+            document.getElementById('lang-en').classList.remove('active');
+            document.getElementById(`lang-${lang}`).classList.add('active');
+        }
+
+        // Event listeners for language buttons
+        document.getElementById('lang-ro').addEventListener('click', () => applyLanguage('ro'));
+        document.getElementById('lang-en').addEventListener('click', () => applyLanguage('en'));
+
+        // Mobile menu toggle
         const menuToggle = document.querySelector('.menu-toggle');
         const navLinks = document.querySelector('.nav-links');
 
@@ -996,14 +1287,23 @@
             navLinks.classList.toggle('active');
         });
 
-        // Închide meniul la click pe un link (doar pe mobil)
+        // Close mobile menu when a link is clicked
         document.querySelectorAll('.nav-links a').forEach(link => {
             link.addEventListener('click', () => {
-                if (navLinks.classList.contains('active')) {
-                    navLinks.classList.remove('active');
-                }
+                navLinks.classList.remove('active');
             });
         });
+
+        // Apply default language on load (or saved preference)
+        // You can save user preference in localStorage for persistent choice
+        const savedLang = localStorage.getItem('selectedLanguage') || 'ro';
+        applyLanguage(savedLang);
+
+        // Update active button on initial load based on savedLang
+        document.getElementById('lang-ro').classList.remove('active');
+        document.getElementById('lang-en').classList.remove('active');
+        document.getElementById(`lang-${savedLang}`).classList.add('active');
+        
     </script>
 </body>
 </html>
